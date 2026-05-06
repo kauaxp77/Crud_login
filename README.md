@@ -42,11 +42,7 @@ Perfil: Responsável por definir os níveis de acesso da aplicação e seus esta
 
 Main: Classe principal responsável por instanciar os objetos e testar o fluxo de funcionamento (simulação de uso real).
 
-👨‍💻 Autor
-Wendson Kauã
-*Desenvolvedor Back-end | Estudante de AnáliseAqui está um README.md completo e estruturado, pronto para você copiar e colar no seu repositório do GitHub. Ele explica o projeto, lista as funcionalidades e já inclui uma seção de autor com os seus dados.
 
-Markdown
 # 🔐 Sistema de Autenticação e Gestão de Perfis
 
 Este é um projeto desenvolvido em **Java** que simula um sistema de autenticação de usuários e gerenciamento de perfis. O objetivo principal é demonstrar a aplicação de conceitos fundamentais de **Programação Orientada a Objetos (POO)**, como classes, encapsulamento, modificadores de acesso e métodos estáticos, operando com armazenamento de dados em memória.
