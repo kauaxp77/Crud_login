@@ -28,3 +28,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Compilação, logs e SO ###
+*.class
+*.log
+Thumbs.db

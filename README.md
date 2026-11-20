@@ -1,92 +1,109 @@
-# 🔐 Sistema de Autenticação e Gestão de Perfis
+<p align="center">
+  <img src="docs/banner.png" alt="Crud Login - autenticação e gestão de perfis em Java" width="100%">
+</p>
 
-Este é um projeto desenvolvido em **Java** que simula um sistema de autenticação de usuários e gerenciamento de perfis. O objetivo principal é demonstrar a aplicação de conceitos fundamentais de **Programação Orientada a Objetos (POO)**, como classes, encapsulamento, modificadores de acesso e métodos estáticos, operando com armazenamento de dados em memória.
+<h1 align="center">🔐 Crud Login — Autenticação e Gestão de Perfis</h1>
 
-## 🚀 Funcionalidades
+<p align="center">
+  Projeto em <b>Java</b> que simula um sistema de autenticação de usuários e gerenciamento de perfis, com os dados
+  guardados <b>em memória</b>, para praticar os fundamentos de <b>Programação Orientada a Objetos</b>.
+</p>
 
-O sistema implementa operações de CRUD (Create, Read, Update, Delete) em memória e lida com a lógica de segurança de acesso básico:
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
+  <img src="https://img.shields.io/badge/POO-Encapsulamento-1e8f3e?style=for-the-badge" alt="POO">
+  <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA">
+  <img src="https://img.shields.io/badge/Depend%C3%AAncias-nenhuma-6b7280?style=for-the-badge" alt="Sem dependências">
+</p>
 
-**Gestão de Perfis:**
-- `cadastrarPerfil()`: Criação de novos níveis de acesso (ex: Administrador, Visitante).
-- `alterarPerfil()`: Atualização das propriedades do perfil (nome e status de ativação).
+<p align="center">
+  <a href="#-sobre-o-projeto">Sobre</a> •
+  <a href="#-funcionalidades">Funcionalidades</a> •
+  <a href="#-telas">Saída</a> •
+  <a href="#-como-executar">Como executar</a> •
+  <a href="#-estrutura-do-projeto">Estrutura</a>
+</p>
 
-**Gestão de Usuários:**
-- `cadastrarUsuario()`: Registro de usuários com validação para impedir logins duplicados.
-- `realizarLogin()`: Sistema de autenticação que verifica credenciais e registra a data/hora exata do último acesso.
-- `alterarSenha()`: Atualização segura de credenciais, exigindo a confirmação da senha antiga.
+---
 
-## 🛠️ Tecnologias Utilizadas
+## 📌 Sobre o projeto
 
-- **Linguagem:** Java
-- **Paradigma:** Orientação a Objetos (POO)
-- **Bibliotecas:** `java.util.ArrayList`, `java.time.LocalDateTime` (Data e hora modernas do Java)
+O objetivo é demonstrar conceitos fundamentais de **POO**: classes, **encapsulamento** (atributos privados e
+getters), **modificadores de acesso** (o construtor de `Usuario` é privado e só é usado pelo método de cadastro) e
+**métodos e atributos estáticos**, que fazem o papel de um "banco de dados" em memória (`List` estática e gerador de
+IDs).
 
-## ⚙️ Como Executar o Projeto
+O projeto foi construído com base em um diagrama de classes, com as entidades:
 
-1. Certifique-se de ter o **Java Development Kit (JDK)** instalado na sua máquina.
-2. Clone este repositório:
-   ```bash
-   git clone [https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git)
-Abra o projeto na sua IDE de preferência (Eclipse, IntelliJ IDEA, VS Code).
+- **`Usuario`**: guarda as credenciais e os dados do usuário e concentra a lógica de cadastro, login e troca de senha.
+- **`Perfil`**: define os níveis de acesso da aplicação e o seu estado (ativo/inativo).
+- **`Main`**: instancia os objetos e testa o fluxo completo, simulando um uso real.
 
-Execute a classe Main.java para visualizar o log do sistema no console.
+> As senhas ficam em texto puro na memória: é um projeto de estudo de POO, não um sistema de autenticação para
+> produção.
 
-Aviso de Encoding: Para garantir que a formatação e os ícones do log de execução sejam exibidos corretamente, certifique-se de que o terminal da sua IDE esteja configurado para o padrão UTF-8.
+## ✨ Funcionalidades
 
-🏗️ Estrutura do Código
-O projeto foi construído baseado em um diagrama de classes e contém as seguintes entidades:
+| | Método | Descrição |
+|---|---|---|
+| 🏷️ | `Perfil.cadastrarPerfil()` | Cria um nível de acesso (ex.: Administrador, Visitante) com ID automático |
+| ✏️ | `Perfil.alterarPerfil()` | Altera o nome e o status de ativação do perfil |
+| 👤 | `Usuario.cadastrarUsuario()` | Registra um usuário e impede logins duplicados |
+| 🔑 | `Usuario.realizarLogin()` | Verifica login e senha e registra a data e a hora do último acesso |
+| 🔒 | `alterarSenha()` | Troca a senha somente se a senha antiga informada estiver correta |
 
-Usuario: Responsável por armazenar as credenciais, dados pessoais e a lógica de login e troca de senhas.
+## 🖼️ Telas
 
-Perfil: Responsável por definir os níveis de acesso da aplicação e seus estados (ativo/inativo).
+Log real de execução da classe `Main`:
 
-Main: Classe principal responsável por instanciar os objetos e testar o fluxo de funcionamento (simulação de uso real).
+<p align="center">
+  <img src="docs/screenshots/log_execucao.png" alt="Log de execução no terminal" width="80%">
+</p>
 
+## 🚀 Como executar
 
-# 🔐 Sistema de Autenticação e Gestão de Perfis
+**Pré-requisito:** um JDK instalado (testado com o JDK 21). Não há dependências externas.
 
-Este é um projeto desenvolvido em **Java** que simula um sistema de autenticação de usuários e gerenciamento de perfis. O objetivo principal é demonstrar a aplicação de conceitos fundamentais de **Programação Orientada a Objetos (POO)**, como classes, encapsulamento, modificadores de acesso e métodos estáticos, operando com armazenamento de dados em memória.
+### Pelo terminal
 
-## 🚀 Funcionalidades
+```bash
+git clone https://github.com/kauaxp77/Crud_login.git
+cd Crud_login
+javac -d out src/*.java
+java -cp out Main
+```
 
-O sistema implementa operações de CRUD (Create, Read, Update, Delete) em memória e lida com a lógica de segurança de acesso básico:
+### Pela IDE
 
-**Gestão de Perfis:**
-- `cadastrarPerfil()`: Criação de novos níveis de acesso (ex: Administrador, Visitante).
-- `alterarPerfil()`: Atualização das propriedades do perfil (nome e status de ativação).
+O repositório já é um projeto do **IntelliJ IDEA** (`Crud_login.iml` e pasta `.idea`): basta abrir a pasta, escolher
+um JDK e executar a classe `Main`. Em outras IDEs (Eclipse, VS Code), marque `src` como pasta de código-fonte.
 
-**Gestão de Usuários:**
-- `cadastrarUsuario()`: Registro de usuários com validação para impedir logins duplicados.
-- `realizarLogin()`: Sistema de autenticação que verifica credenciais e registra a data/hora exata do último acesso.
-- `alterarSenha()`: Atualização segura de credenciais, exigindo a confirmação da senha antiga.
+> **Encoding:** para os acentos aparecerem corretamente no log, deixe o terminal da IDE em **UTF-8**.
 
-## 🛠️ Tecnologias Utilizadas
+## 📁 Estrutura do projeto
 
-- **Linguagem:** Java
-- **Paradigma:** Orientação a Objetos (POO)
-- **Bibliotecas:** `java.util.ArrayList`, `java.time.LocalDateTime` (Data e hora modernas do Java)
+```
+Crud_login/
+├── src/
+│   ├── Main.java       # Simulação do fluxo: perfis, usuários, login e troca de senha
+│   ├── Usuario.java    # Credenciais, cadastro, login e alteração de senha
+│   └── Perfil.java     # Níveis de acesso e status ativo/inativo
+├── docs/
+│   ├── banner.png
+│   └── screenshots/
+├── .idea/              # Configuração do projeto no IntelliJ IDEA
+└── Crud_login.iml
+```
 
-## ⚙️ Como Executar o Projeto
+## 🛠️ Tecnologias
 
-1. Certifique-se de ter o **Java Development Kit (JDK)** instalado na sua máquina.
-2. Clone este repositório:
-   ```bash
-   git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
-Abra o projeto na sua IDE de preferência (Eclipse, IntelliJ IDEA, VS Code).
+- **Java** (somente a biblioteca padrão)
+- `java.util.ArrayList` / `List` para o armazenamento em memória
+- `java.time.LocalDateTime` e `DateTimeFormatter` para o registro do último acesso
+- **IntelliJ IDEA**
 
-Execute a classe Main.java para visualizar o log do sistema no console.
+## 👨‍💻 Autor
 
-Aviso de Encoding: Para garantir que a formatação e os ícones do log de execução sejam exibidos corretamente, certifique-se de que o terminal da sua IDE esteja configurado para o padrão UTF-8.
+Desenvolvido por **[kauaxp77](https://github.com/kauaxp77)**
 
-🏗️ Estrutura do Código
-O projeto foi construído baseado em um diagrama de classes e contém as seguintes entidades:
-
-Usuario: Responsável por armazenar as credenciais, dados pessoais e a lógica de login e troca de senhas.
-
-Perfil: Responsável por definir os níveis de acesso da aplicação e seus estados (ativo/inativo).
-
-Main: Classe principal responsável por instanciar os objetos e testar o fluxo de funcionamento (simulação de uso real).
-
-👨‍💻 Autor
-Wendson Kauã
-Desenvolvedor Back-end | Estudante de Análise e Desenvolvimento de Sistemas (ADS)
+<p align="center">⭐ Se curtiu o projeto, deixe uma estrela!</p>
